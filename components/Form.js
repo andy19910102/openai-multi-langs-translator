@@ -90,6 +90,7 @@ const Form = ({ onFormSubmit }) => {
                     {langListDOM}
                 </div>
                 <button className="btn" type="submit">📡 開始翻譯</button>
+                <p className="small text-center">此翻譯內容透過 OPEN AI text-davinci-003模型生成，並不保證翻譯結果完全正確。</p>
             </form>
         </div>
     )
