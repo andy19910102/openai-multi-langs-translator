@@ -15,7 +15,7 @@ The above text was edited and generated with the assistance of ChatGPT.
 
 ## 如何取得專案
 
-1. 點擊Github Repository中的綠色「Code」按鈕。
+1. 點擊 Github Repository 中的綠色「Code」按鈕。
 2. 點擊「Download ZIP」。
 
 ## 如何啟動應用程式
