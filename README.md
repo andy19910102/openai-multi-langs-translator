@@ -48,11 +48,13 @@ OPENAI_API_KEY=您的OPENAI_API_KEY
 
 關於如何尋找你的 OPENAI_API_KEY 可參考 [Where do I find my Secret API Key?](https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key)。
 
-5. 在終端機上輸入以下指令將專案啟動
+5. 在終端機上輸入以下指令將應用程式啟動
 
 ```
 yarn dev
 ```
+
+6. 應用程式啟動後您可在 `http://localhost:3000` 觀看結果。
 
 ## 貢獻
 

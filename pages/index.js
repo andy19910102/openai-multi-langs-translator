@@ -58,8 +58,12 @@ export default function Home() {
             <main>
                 <header>
                     <div className="container">
-                        <h1>Open AI Multi Langs Translator</h1>
-                        <p>記得在根目錄下創建 <span class="file-code">.env</span> 檔案，並寫入 <span class="file-code">OPENAI_API_KEY=你的OPENAI_API_KEY</span>。</p>
+                        <h1>Open AI Multi Langs Translator
+                            <a className="githubLink" title="前往Github Repository" href="https://github.com/andy19910102/openai-multi-langs-translator" target="_blank">
+                                <i className="fab fa-github-alt"></i>
+                            </a>
+                        </h1>
+                        <p>記得在根目錄下創建 <span className="file-code">.env</span> 檔案，並寫入 <span className="file-code">OPENAI_API_KEY=你的OPENAI_API_KEY</span>。</p>
                         <ol>
                             <li>輸入您想翻譯的中文內容。</li>
                             <li>點選想翻譯的語言。</li>
@@ -81,7 +85,7 @@ export default function Home() {
 
             <footer>
                 <div className="container">
-                    <p>&copy; 2023 <a href="https://enn.design/" target="_blank">Huang An Sheng</a> </p>
+                    <p>&copy; 2023, This application is developed by <a href="https://enn.design/" target="_blank">Huang An Sheng</a> 🍀 </p>
                 </div>
             </footer>
         </div>
