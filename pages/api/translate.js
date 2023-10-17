@@ -1,16 +1,17 @@
-import { Configuration, OpenAIApi } from "openai";
+import OpenAI from 'openai';
 
-const configuration = new Configuration({
-    apiKey: process.env.OPENAI_API_KEY,
+const apiKey = process.env.OPENAI_API_KEY;
+
+const openai = new OpenAI({
+    apiKey: apiKey,
 });
-const openai = new OpenAIApi(configuration);
 
 export default async function (req, res) {
     // Check that the API key is configured
-    if (!configuration.apiKey) {
+    if (!apiKey) {
         res.status(500).json({
             error: {
-                message: "OpenAI API key not configured, please follow instructions in README.md",
+                message: "環境變數 OPENAI_API_KEY 未設定",
             }
         });
         return;
@@ -21,13 +22,13 @@ export default async function (req, res) {
 
     try {
         const prompt = generatePrompt(userInput, lang);
-        const completion = await openai.createCompletion({
-            model: "text-davinci-003",
-            prompt,
-            temperature: 0.6,
-            max_tokens: 256
+        const completion = await openai.chat.completions.create({
+            messages: [{ role: 'user', content: prompt }],
+            model: 'gpt-3.5-turbo',
+            max_tokens: 500
         });
-        res.status(200).json({ result: completion.data.choices[0].text });
+        const aiMessage = completion.choices[0].message.content;
+        res.status(200).json({ result: aiMessage });
     } catch (error) {
         // Consider adjusting the error handling logic for your use case
         if (error.response) {
@@ -46,7 +47,10 @@ export default async function (req, res) {
 
 function generatePrompt(userInput, lang) {
     return `
-使用者:你是一個專業多國語言翻譯專家，將我下一句傳給你使用繁體中文寫的文案翻譯成「${lang}」語言
-使用者:${userInput}
-翻譯專家:`;
+你是一個翻譯，將我傳給你的文案翻譯為「${lang}」：
+
+###
+${userInput}
+###
+`;
 }

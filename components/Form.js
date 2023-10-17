@@ -1,42 +1,9 @@
 import { useState } from "react";
-import axios from "axios";
+import langOptions from "../static/lang-options";
 
 const Form = ({ onFormSubmit }) => {
     const [userInput, setUserInput] = useState("");
-    const [langList, setLangList] = useState([
-        { label: "English", icon: "🇺🇸", checked: true },
-        { label: "Japanese", icon: "🇯🇵", checked: true },
-        { label: "Korean", icon: "🇰🇷", checked: true },
-        { label: "French", icon: "🇫🇷", checked: false },
-        { label: "German", icon: "🇩🇪", checked: false },
-        { label: "Spanish", icon: "🇪🇸", checked: false },
-        { label: "Italian", icon: "🇮🇹", checked: false },
-        { label: "Portuguese", icon: "🇵🇹", checked: false },
-        { label: "Dutch", icon: "🇳🇱", checked: false },
-        { label: "Czech", icon: "🇨🇿", checked: false },
-        { label: "Danish", icon: "🇩🇰", checked: false },
-        { label: "Finnish", icon: "🇫🇮", checked: false },
-        { label: "Hungarian", icon: "🇭🇺", checked: false },
-        { label: "Norwegian", icon: "🇳🇴", checked: false },
-        { label: "Polish", icon: "🇵🇱", checked: false },
-        { label: "Greek", icon: "🇬🇷", checked: false },
-        { label: "Russian", icon: "🇷🇺", checked: false },
-        { label: "Arabic", icon: "🇸🇦", checked: false },
-        { label: "Hindi", icon: "🇮🇳", checked: false },
-        { label: "Indonesian", icon: "🇮🇩", checked: false },
-        { label: "Malay", icon: "🇲🇾", checked: false },
-        { label: "Thai", icon: "🇹🇭", checked: false },
-        { label: "Vietnamese", icon: "🇻🇳", checked: false },
-        { label: "Bengali", icon: "🇧🇩", checked: false },
-        { label: "Punjabi", icon: "🇵🇰", checked: false },
-        { label: "Tamil", icon: "🇮🇳", checked: false },
-        { label: "Telugu", icon: "🇮🇳", checked: false },
-        { label: "Urdu", icon: "🇵🇰", checked: false },
-        { label: "Persian", icon: "🇮🇷", checked: false },
-        { label: "Turkish", icon: "🇹🇷", checked: false },
-        { label: "Burmese", icon: "🇲🇲", checked: false },
-        { label: "Romanian", icon: "🇷🇴", checked: false },
-    ]);
+    const [langList, setLangList] = useState(langOptions);
 
     const langListDOM = langList.map((lang, index) => {
         return (
@@ -78,7 +45,7 @@ const Form = ({ onFormSubmit }) => {
                     cols="30"
                     rows="8"
                     value={userInput}
-                    placeholder="在此填入要翻譯成多國語言的中文文字..."
+                    placeholder="在此填入要翻譯的內容..."
                     onChange={(e) => setUserInput(e.target.value)}
                     required
                 >
@@ -90,7 +57,7 @@ const Form = ({ onFormSubmit }) => {
                     {langListDOM}
                 </div>
                 <button className="btn" type="submit">📡 開始翻譯</button>
-                <p className="small text-center">此翻譯內容透過 OPEN AI text-davinci-003 模型生成，並不保證翻譯結果完全正確。</p>
+                <p className="small text-center">此翻譯結果透過 OPEN AI gpt-3.5-turbo 模型生成。</p>
             </form>
         </div>
     )

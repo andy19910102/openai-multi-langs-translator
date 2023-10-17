@@ -38,9 +38,9 @@ const Card = ({ title, value, hasResponse }) => {
                         <span>已複製翻譯結果</span>
                     </div>
                 </h3>
-                <textarea ref={textAreaRef} cols="30" rows="10" value={value || ""} onChange={(e) => console.log(e)}></textarea>
+                <textarea ref={textAreaRef} cols="30" rows="5" value={value || ""} onChange={(e) => console.log(e)}></textarea>
                 <button className="btn btn-copy" type="button" onClick={handleCopy}>
-                    <i class="fa-solid fa-clipboard"></i> 複製翻譯
+                    <i className="fa-solid fa-clipboard"></i> 複製翻譯
                 </button>
             </div>
         )

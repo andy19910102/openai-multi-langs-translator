@@ -6,11 +6,9 @@ import Card from "../components/Card";
 import axios from "axios";
 
 export default function Home() {
-    const [animalInput, setAnimalInput] = useState("");
     const [cardList, setCardList] = useState([]);
 
     const submitHandler = ({ userInput, langList }) => {
-        let currentIndex = 0;
         const newCardList = langList.map((lang) => {
             return {
                 title: lang["icon"] + lang["label"],
@@ -37,9 +35,8 @@ export default function Home() {
             })
             .catch(error => {
                 console.log(error);
-                alert(error.message);
-            })
-
+                alert(`${error.message}: ${error.response.data.error.message}`);
+            });
     };
 
     const cardListDOM = cardList.map((card, index) => {
@@ -58,11 +55,7 @@ export default function Home() {
             <main>
                 <header>
                     <div className="container">
-                        <h1>Open AI Multi Langs Translator
-                            <a className="githubLink" title="前往Github Repository" href="https://github.com/andy19910102/openai-multi-langs-translator" target="_blank">
-                                <i className="fab fa-github-alt"></i>
-                            </a>
-                        </h1>
+                        <h1>Open AI Multi Langs Translator</h1>
                         <p>記得在根目錄下創建 <span className="file-code">.env</span> 檔案，並寫入 <span className="file-code">OPENAI_API_KEY=你的OPENAI_API_KEY</span>。</p>
                         <ol>
                             <li>輸入您想翻譯的中文內容。</li>
@@ -85,7 +78,7 @@ export default function Home() {
 
             <footer>
                 <div className="container">
-                    <p>&copy; 2023, This application is developed by <a href="https://enn.design/" target="_blank">Huang An Sheng</a> 🍀 </p>
+                    <p>&copy; 2023, developed by <a href="https://enn.design/" target="_blank">Huang An Sheng</a></p>
                 </div>
             </footer>
         </div>
