@@ -1,12 +1,13 @@
 import Head from "next/head";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Form from "../components/Form";
 import Card from "../components/Card";
 import axios from "axios";
 
 export default function Home() {
     const [cardList, setCardList] = useState([]);
+    const translatResultRef = useRef(null);
 
     const submitHandler = ({ userInput, langList }) => {
         const newCardList = langList.map((lang) => {
@@ -32,6 +33,7 @@ export default function Home() {
                     }
                 });
                 setCardList(newCardList);
+                translatResultRef.current.scrollIntoView({ behavior: 'smooth' });
             })
             .catch(error => {
                 console.log(error);
@@ -69,7 +71,7 @@ export default function Home() {
                         <Form onFormSubmit={submitHandler} />
                     </div>
                 </section>
-                <section>
+                <section ref={translatResultRef}>
                     <div className="container">
                         {cardListDOM}
                     </div>
