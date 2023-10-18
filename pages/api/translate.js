@@ -8,7 +8,7 @@ const openai = new OpenAI({
 
 export default async function (req, res) {
     // Check that the API key is configured
-    if (!apiKey) {
+    if (!apiKey || apiKey === undefined) {
         res.status(500).json({
             error: {
                 message: "環境變數 OPENAI_API_KEY 未設定",

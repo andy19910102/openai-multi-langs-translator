@@ -35,7 +35,7 @@ export default function Home() {
             })
             .catch(error => {
                 console.log(error);
-                alert(`${error.message}: ${error.response.data.error.message}`);
+                alert(`${error.message}`);
             });
     };
 
