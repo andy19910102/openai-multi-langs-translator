@@ -3,13 +3,13 @@
 ![Next.js](https://camo.githubusercontent.com/b7395b00d152dc8f19cec61f582369bd580e31b8ed93d34646ec43aa675baa7c/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4e6578742d626c61636b3f7374796c653d666f722d7468652d6261646765266c6f676f3d6e6578742e6a73266c6f676f436f6c6f723d7768697465)
 ![React.js](https://camo.githubusercontent.com/ab4c3c731a174a63df861f7b118d6c8a6c52040a021a552628db877bd518fe84/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f72656163742d2532333230323332612e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d7265616374266c6f676f436f6c6f723d253233363144414642)
 
-Open AI Multi Langs Translator 是一個基於 Next.js 架構的項目，它通過使用 Open AI 的 text-davinci-003 模型來實現多國語言一次性翻譯的網站應用程式介面。使用者可以在此網站上輸入待翻譯的文字，並選擇所需的語言進行翻譯。此外，Open AI Multi Langs Translator 也支持多種語言之間的翻譯，例如英語、中文、西班牙語、法語、德語等。
+Open AI Multi Langs Translator 是一個基於 Next.js 架構的項目，使用 Open AI 的 gpt-3.5-turbo 模型來實現多國語言一次性翻譯的網站應用程式介面。使用者可以在此網站上輸入待翻譯的文字，並選擇所需的語言進行翻譯。此外，Open AI Multi Langs Translator 也支持多種語言之間的翻譯，例如英語、中文、西班牙語、法語、德語等。
 
 以上文字由ChatGPT協助編修產生。
 
 ----
 
-Open AI Multi Langs Translator is a project based on the Next.js framework, which implements a web application programming interface for multi-language translation with Open AI's text-davinci-003 model. Users can input the text they want to translate on this website and choose the desired language for translation. In addition, Open AI Multi Langs Translator also supports translation between multiple languages, such as English, Chinese, Spanish, French, German, and more.
+Open AI Multi Langs Translator is a project based on the Next.js framework, which implements a web application programming interface for multi-language translation with Open AI's gpt-3.5-turbo model. Users can input the text they want to translate on this website and choose the desired language for translation. In addition, Open AI Multi Langs Translator also supports translation between multiple languages, such as English, Chinese, Spanish, French, German, and more.
 
 The above text was edited and generated with the assistance of ChatGPT.
 
